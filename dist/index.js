@@ -31,16 +31,13 @@ var words = ["AI", "analytics", "AR", "automation", "blue", "cloud", "columns", 
 
 var domains = ["ai", "app", "cloud", "co", "code", "dev", "edu", "io", "it", "lol", "network", "org", "sh", "systems", "tech", "xyz"];
 
-// if the name contains no spaces, randomly append a domain?
-// randomly replace s with z at the end
-
 function getRandomTechBusinessName() {
   var wordCount = (0, _getRandomEntry.getRandomEntry)([1, 2, 3]);
   var shouldAddCharToStart = shouldDoThing(0.1);
 
   var businessName = shouldAddCharToStart ? (0, _getRandomEntry.getRandomEntry)(prefixChars) : "";
   var shouldRepeatLastLetter = shouldDoThing(0.5);
-  var shouldAddDomainIfNoSpaces = shouldDoThing(0.9);
+  var shouldAddDomainIfNoSpaces = shouldDoThing(0.75);
 
   for (var i = 1; i <= wordCount; i++) {
     var shouldAddSpace = shouldDoThing(0.5);
